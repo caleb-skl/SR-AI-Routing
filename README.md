@@ -1,22 +1,24 @@
-# Shadowrocket Custom Rules for Hong Kong
+# Shadowrocket Custom Rules (Hong Kong AI & Ad Block)
 
-A lightweight Shadowrocket rule configuration designed to route generative AI platforms and TikTok through an external proxy node (such as Surfshark WireGuard) while keeping local Hong Kong traffic direct and blocking ads.
+A tailored Shadowrocket configuration based on [SR-Rule](https://github.com/pandit-psw/SR-Rule) designed for users in Hong Kong. It routes generative AI tools and TikTok through an external proxy node while keeping local traffic direct and blocking ads.
 
 ---
 
-## Features
+## What This Configuration Does
 
-- **AI Tools via Proxy:** Routes ChatGPT, Claude, Google Gemini, NotebookLM, Apple Intelligence, and TikTok through your assigned proxy server.
-- **Direct Local Traffic:** Domestic Hong Kong traffic, banking, and standard browsing connect directly at full local speed without proxy latency.
-- **Built-in Ad Filtering:** Blocks common telemetry, analytics, and advertising domains at the device level.
+| Traffic Type | Destination Examples | Routing Policy |
+| :--- | :--- | :--- |
+| **Generative AI** | ChatGPT, Claude, Gemini, Copilot, Perplexity | `PROXY` (via assigned node) |
+| **Restricted Media** | TikTok | `PROXY` (via assigned node) |
+| **Advertisements** | Common telemetry, tracking, and ad servers | `REJECT` (blocked on-device) |
+| **Local HK & Other** | Banking, government, local sites, standard web | `DIRECT` (full local speed) |
 
 ---
 
 ## Quick Setup (Shadowrocket iOS / iPadOS)
 
 ### 1. Import the Rule File
-
-1. Copy the raw configuration URL:
+1. Copy the raw configuration link:
    ```text
    https://raw.githubusercontent.com/calebsze/SR-AI-Routing/main/HK_AI_AD.conf
    ```
